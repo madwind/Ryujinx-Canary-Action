@@ -44,7 +44,7 @@ jobs:
           script: |
             github.rest.git.createRef({
               owner: context.repo.owner,
-              repo: context.repo.repo,
+              repo: '${{ RYUJINX_TARGET_RELEASE_CHANNEL_SOURCE_REPO }}',
               ref: 'refs/tags/Canary-${{ steps.version_info.outputs.build_version }}',
               sha: context.sha
             })
