@@ -41,11 +41,10 @@ jobs:
       - name: Create tag
         uses: actions/github-script@v7
         with:
-          github-token: ${{ secrets.RELEASE_TOKEN }}
           script: |
             github.rest.git.createRef({
               owner: context.repo.owner,
-              repo: '${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_SOURCE_REPO }}',
+              repo: context.repo.repo,
               ref: 'refs/tags/Canary-${{ steps.version_info.outputs.build_version }}',
               sha: context.sha
             })
