@@ -48,6 +48,7 @@ jobs:
               ref: 'refs/tags/Canary-${{ steps.version_info.outputs.build_version }}',
               sha: context.sha
             })
+          github-token: ${{ secrets.RELEASE_TOKEN }}
 
       - name: Create release
         uses: ncipollo/release-action@v1
