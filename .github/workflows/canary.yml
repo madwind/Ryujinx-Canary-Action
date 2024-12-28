@@ -49,6 +49,7 @@ jobs:
               ref: "main"  # 或者你可以指定其他分支或 commit SHA
             });
             return data.sha;
+          github-token: ${{ secrets.RELEASE_TOKEN }}
 
       - name: Create tag
         uses: actions/github-script@v7
