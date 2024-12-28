@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs: {}
   schedule:
-    - cron: '0 0 * * 0'  # 每周日午夜 (UTC 时间) 触发
+    - cron: '0 23 * * *'
     
 concurrency: release
 
@@ -64,6 +64,7 @@ jobs:
             # Canary builds:
             
             Auto build until [#434](https://github.com/Ryubing/Ryujinx/pull/434]) is merged.
+            From [Action](https://github.com/madwind/Ryujinx-Canary-Action).
             
             | Platform | Artifact |
             |--|--|
@@ -206,6 +207,7 @@ jobs:
             # Canary builds:
             
             Auto build until [#434](https://github.com/Ryubing/Ryujinx/pull/434]) is merged.
+            From [Action](https://github.com/madwind/Ryujinx-Canary-Action).
             
             | Platform | Artifact |
             |--|--|
