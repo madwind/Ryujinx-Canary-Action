@@ -44,9 +44,9 @@ jobs:
         with:
           script: |
             const { data } = await github.rest.repos.getCommit({
-              owner: "${{ env.OTHER_REPO_OWNER }}",
-              repo: "${{ env.OTHER_REPO_NAME }}",
-              ref: "main"  # 或者你可以指定其他分支或 commit SHA
+              owner: "${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_OWNER }}",
+              repo: "${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_SOURCE_REPO }}",
+              ref: "master"
             });
             return data.sha;
           github-token: ${{ secrets.RELEASE_TOKEN }}
