@@ -3,17 +3,9 @@ name: Canary release job
 on:
   workflow_dispatch:
     inputs: {}
-  push:
-    branches: [ master ]
-    paths-ignore:
-      # - '.github/**'
-      - 'docs/**'
-      - 'assets/**'
-      # - '*.yml'
-      - '*.json'
-      - '*.config'
-      - '*.md'
-
+  schedule:
+    - cron: '0 0 * * 0'  # 每周日午夜 (UTC 时间) 触发
+    
 concurrency: release
 
 env:
@@ -46,7 +38,7 @@ jobs:
             const { data } = await github.rest.repos.getCommit({
               owner: "${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_OWNER }}",
               repo: "${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_SOURCE_REPO }}",
-              ref: "main"
+              ref: "master"
             });
             return data.sha;
           github-token: ${{ secrets.RELEASE_TOKEN }}
@@ -71,7 +63,7 @@ jobs:
           body: |            
             # Canary builds:
             
-            These builds are experimental and may sometimes not work, use [regular builds](https://github.com/${{ github.repository }}/releases/latest) instead if that sounds like something you don't want to deal with.
+            Auto build until [#434](https://github.com/Ryubing/Ryujinx/pull/434]) is merged.
             
             | Platform | Artifact |
             |--|--|
@@ -213,7 +205,7 @@ jobs:
           body: |
             # Canary builds:
             
-            These builds are experimental and may sometimes not work, use [regular builds](https://github.com/${{ github.repository }}/releases/latest) instead if that sounds like something you don't want to deal with.
+            Auto build until [#434](https://github.com/Ryubing/Ryujinx/pull/434]) is merged.
             
             | Platform | Artifact |
             |--|--|
