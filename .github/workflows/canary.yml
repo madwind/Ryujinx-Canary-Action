@@ -3,8 +3,6 @@ name: Canary release job
 on:
   workflow_dispatch:
     inputs: {}
-  schedule:
-    - cron: '0 23 * * *'
     
 concurrency: release
 
