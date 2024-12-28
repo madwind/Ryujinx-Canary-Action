@@ -61,7 +61,7 @@ jobs:
           body: |            
             # Canary builds:
             
-            Auto build until [#434](https://github.com/Ryubing/Ryujinx/pull/434]) is merged.
+            Auto build until [#434](https://github.com/Ryubing/Ryujinx/pull/434) is merged.
             From [Action](https://github.com/madwind/Ryujinx-Canary-Action).
             
             | Platform | Artifact |
@@ -204,7 +204,7 @@ jobs:
           body: |
             # Canary builds:
             
-            Auto build until [#434](https://github.com/Ryubing/Ryujinx/pull/434]) is merged.
+            Auto build until [#434](https://github.com/Ryubing/Ryujinx/pull/434) is merged.
             From [Action](https://github.com/madwind/Ryujinx-Canary-Action).
             
             | Platform | Artifact |
