@@ -59,7 +59,7 @@ jobs:
               owner: "${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_OWNER }}",
               repo: "${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_SOURCE_REPO }}",
               ref: 'refs/tags/Canary-${{ steps.version_info.outputs.build_version }}',
-              sha: "${{ steps.get_sha.outputs.result }}"
+              sha: ${{ steps.get_sha.outputs.result }}
             })
           github-token: ${{ secrets.RELEASE_TOKEN }}
 
