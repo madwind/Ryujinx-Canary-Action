@@ -9,7 +9,7 @@ on:
       # - '.github/**'
       - 'docs/**'
       - 'assets/**'
-      - '*.yml'
+      # - '*.yml'
       - '*.json'
       - '*.config'
       - '*.md'
