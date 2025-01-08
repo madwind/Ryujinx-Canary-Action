@@ -36,7 +36,7 @@ jobs:
             const { data } = await github.rest.repos.getCommit({
               owner: "${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_OWNER }}",
               repo: "${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_SOURCE_REPO }}",
-              ref: "master"
+              ref: "joycon"
             });
             return data.sha;
           github-token: ${{ secrets.RELEASE_TOKEN }}
