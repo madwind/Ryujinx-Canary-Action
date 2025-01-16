@@ -56,7 +56,7 @@ jobs:
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          name: "Canary ${{ steps.version_info.outputs.build_version }} SDL3"
+          name: "Canary ${{ steps.version_info.outputs.build_version }}"
           tag: ${{ steps.version_info.outputs.build_version }}
           body: |            
             # Canary builds:
@@ -266,12 +266,13 @@ jobs:
       - name: Pushing new release
         uses: ncipollo/release-action@v1
         with:
-          name: "Canary ${{ steps.version_info.outputs.build_version }}"
+          name: "Canary ${{ steps.version_info.outputs.build_version }} SDL3"
           artifacts: "publish_ava/*.tar.gz"
           tag: ${{ steps.version_info.outputs.build_version }}
           body: ""
           omitBodyDuringUpdate: true
           allowUpdates: true
+          prerelease: true
           replacesArtifacts: true
           owner: ${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_OWNER }}
           repo: ${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_REPO }}
