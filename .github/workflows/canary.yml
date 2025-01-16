@@ -56,13 +56,12 @@ jobs:
       - name: Create release
         uses: ncipollo/release-action@v1
         with:
-          name: "Canary ${{ steps.version_info.outputs.build_version }}"
+          name: "Canary ${{ steps.version_info.outputs.build_version }} SDL3"
           tag: ${{ steps.version_info.outputs.build_version }}
           body: |            
             # Canary builds:
-            
-            Auto build until [#434](https://github.com/Ryubing/Ryujinx/pull/434) is merged.
-            From [Action](https://github.com/madwind/Ryujinx-Canary-Action).
+            SDL3
+            Only includes SDL3 for Windows.
             
             | Platform | Artifact |
             |--|--|
@@ -75,6 +74,7 @@ jobs:
           omitBodyDuringUpdate: true
           owner: ${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_OWNER }}
           repo: ${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_REPO }}
+          prerelease: true
           token: ${{ secrets.RELEASE_TOKEN }}
 
   release:
@@ -192,8 +192,8 @@ jobs:
           body: |
             # Canary builds:
             
-            Auto build until [#434](https://github.com/Ryubing/Ryujinx/pull/434) is merged.
-            From [Action](https://github.com/madwind/Ryujinx-Canary-Action).
+            SDL3
+            Only includes SDL3 for Windows.
             
             | Platform | Artifact |
             |--|--|
@@ -206,6 +206,7 @@ jobs:
           omitBodyDuringUpdate: true
           allowUpdates: true
           replacesArtifacts: true
+          prerelease: true
           owner: ${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_OWNER }}
           repo: ${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_REPO }}
           token: ${{ secrets.RELEASE_TOKEN }}
