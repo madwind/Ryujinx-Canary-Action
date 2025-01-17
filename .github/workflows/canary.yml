@@ -62,6 +62,7 @@ jobs:
             # Canary builds:
             SDL3
             Only includes SDL3 for Windows.
+            Other: [SDL3](https://github.com/libsdl-org/SDL/releases)
             
             | Platform | Artifact |
             |--|--|
@@ -191,9 +192,8 @@ jobs:
           body: |
             # Canary builds:
             
-            SDL3
             Only includes SDL3 for Windows.
-            
+            Other: [SDL3](https://github.com/libsdl-org/SDL/releases)
             | Platform | Artifact |
             |--|--|
             | Windows 64-bit | [Canary Windows Artifact](https://github.com/${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_OWNER }}/${{ env.RYUJINX_TARGET_RELEASE_CHANNEL_REPO }}/releases/download/${{ steps.version_info.outputs.build_version }}/ryujinx-canary-${{ steps.version_info.outputs.build_version }}-win_x64.zip) |
